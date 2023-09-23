@@ -2,17 +2,17 @@
 
 try{  
      /*
-    prompt is not a valid construct in the Node.js runtime ( running in through VSCode). It will only work in browser-based JavaScript engines.
-    "require("prompt-sync")"have to be isntalled if the code is running in node.js envirmonet
+    prompt is not a valid construct in the Node.js runtime ( running through VSCode). It will only work in browser-based JavaScript engines.
+    "require("prompt-sync")" has to be installed if the code is running in node.js environment
     const prompt is declared if the runtime env is Node.js
     */
     // const prompt = require("prompt-sync")();  
-    // ask users to enter the whole mathematical expression in ONE line and stored in a String Variable.
-    const enteredOperation = prompt("Enter two numbers seperated by arithmetic operators (+,-,*,/): ");
+    // ask users to enter the whole mathematical expression in ONE line and store in a String Variable.
+    const enteredOperation = prompt("Enter two numbers separated by arithmetic operators (+,-,*,/): ");
     
     //declaring variables for the numbers and the result
     let numbers=[]
-    //create array of the operators types
+    //create an array of the operators types
     const validOperators = ['+','-','*','/'];
 
     function calculator(enteredOperation){
@@ -52,10 +52,10 @@ try{
             }
         }
 
-        // Loop to check each number follows the requirment 
+        // Loop to check each number follows the requirement 
         // To check if the number is entered
         // To check if the number is between 1 and 10
-        //  To check if the number is Integer
+        //  To check if the number is an Integer
 
         for (let i=0; i<numbers.length;i++){
             // To check if the number is entered
@@ -63,8 +63,7 @@ try{
                 throw "Only numbers are allowed"
             } 
             if((numbers[i]<0)|| (numbers[i]>10)){
-                console.log("zaha "+numbers[i]);
-                throw "Please enter number from 1 to 10 Only"
+                throw "Please enter a number from 1 to 10 Only"
             }
             //  To check if the number is Integer
             if (!(Number. isInteger(numbers[i]) )){
@@ -73,10 +72,10 @@ try{
         }
         //  To check no more than three numbers are entered
         if(numbers.length>4){
-            throw "Please no more than three number"
+            throw "Please no more than three numbers"
         }
         else if(numbers.length>1&&operater_index.length>0){
-        // calculate the operations with the specific order
+        //Calculate the operations with the specific order
         // multiplication and division are performed first, which is happens from left to right.
 
         for(let i=0; i<operatorEnteredValue.length;i++){
@@ -93,7 +92,7 @@ try{
                 numbers[i+1]=numbers[i]/numbers[i+1];
                 delete numbers[i];
             }
-            // checks for division by 0 and throw error
+            // checks for division by 0 and throw an error
             else if( operatorEnteredValue[i]=="/"&&numbers[i+1]==0)
                 throw "Can not divide on zero, Please enter valid expression"
             
@@ -103,8 +102,8 @@ try{
         for(let i=0; i<operatorEnteredValue.length;i++){
             let count=1;
             
-            // After the divion and multiplication, some items in the numberd array are empty 
-            // So the loop is to detect the next item not NaN items at index i to be added or subtracted from the 
+            // After the division and multiplication, some items in the number array are empty 
+            // So the loop is to detect the next item, not NaN items at index i to be added or subtracted from the 
             for(j=i+1;j<operatorEnteredValue.length;j++){
                 if((isNaN(numbers[j]))){
                     count++;
