@@ -1,4 +1,4 @@
-# Basic-Calculator-for-Multiple-Numbers
+# Basic-Calculator-for-Multiple-Numbers- Java
 
 # Zaha Badi
 
